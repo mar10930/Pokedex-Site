@@ -14,5 +14,40 @@ fetch(url)
     //If the call was not successful display error
     .catch(error => {console.log("Error couldn't retreive pokemon!!!",error);});
 
+function getNames()
+{
+    let pokeList = document.getElementById("pokeList");
+    var buttons = "";
+    var pokemonNum = 1;
 
+    for(var i = 0; i < pokemonCall.length;i++)
+    {
+        if(pokemonNum >= 1 && pokemonNum < 10)
+        {
+            let li = document.createElement("li");
+            li.innerText = "#00" + pokemonNum + " " + pokemonCall[i].name;
+            console.log(pokemonCall[10].name);
+            pokeList.appendChild(li);
+        }
+
+        else if(pokemonNum >= 10 && pokemonNum < 100)
+        {
+            let li = document.createElement("li");
+            li.innerText = "#0" + pokemonNum + " " + pokemonCall[i].name;
+            pokeList.appendChild(li);
+        }
+
+        else if(pokemonNum >= 100)
+        {
+            let li = document.createElement("li");
+            li.innerText = "#" + pokemonNum + " " + pokemonCall[i].name;
+            pokeList.appendChild(li);
+        }
+
+        pokemonNum++;
+        
+    }
+
+    pokeList.innerHTML = buttons;
+} 
 
