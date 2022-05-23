@@ -10,14 +10,15 @@ fetch(url)
         //Go to next list of pokemon here
         pokemonCall = data.results;
         console.log(pokemonCall[120]);
+        dispPokemon();
     })
     //If the call was not successful display error
     .catch(error => {console.log("Error couldn't retreive pokemon!!!",error);});
-
-function getNames()
+   
+function dispPokemon()
 {
-    let pokeList = document.getElementById("pokeList");
-    var buttons = "";
+    let ul = document.createElement("ul");
+    document.body.appendChild(ul);
     var pokemonNum = 1;
 
     for(var i = 0; i < pokemonCall.length;i++)
@@ -25,29 +26,28 @@ function getNames()
         if(pokemonNum >= 1 && pokemonNum < 10)
         {
             let li = document.createElement("li");
-            li.innerText = "#00" + pokemonNum + " " + pokemonCall[i].name;
-            console.log(pokemonCall[10].name);
-            pokeList.appendChild(li);
+            let strEntry = String("#00" + pokemonNum + " " + pokemonCall[i].name);
+            li.innerHTML = strEntry;
+            ul.appendChild(li);
         }
 
         else if(pokemonNum >= 10 && pokemonNum < 100)
         {
             let li = document.createElement("li");
-            li.innerText = "#0" + pokemonNum + " " + pokemonCall[i].name;
-            pokeList.appendChild(li);
+            let strEntry = String("#0" + pokemonNum + " " + pokemonCall[i].name);
+            li.innerHTML = strEntry;
+            ul.appendChild(li);
         }
 
         else if(pokemonNum >= 100)
         {
             let li = document.createElement("li");
-            li.innerText = "#" + pokemonNum + " " + pokemonCall[i].name;
-            pokeList.appendChild(li);
+            let strEntry = String("#" + pokemonNum + " " + pokemonCall[i].name);
+            li.innerHTML = strEntry;
+            ul.appendChild(li);
+            
         }
-
         pokemonNum++;
-        
     }
-
-    pokeList.innerHTML = buttons;
-} 
+}
 
