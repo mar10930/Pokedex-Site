@@ -18,6 +18,19 @@
     font-size: xx-large;
 }
 
+.listContain
+{
+    background-color: #23272A;
+    padding: 15px;
+    width: 20%;
+}
+.listTitle
+{
+    color: cornsilk;
+    text-align: center;
+    font-family: 'Pokemon Solid',sans-serif;
+}
+
 .help
 {
     color: black;
@@ -29,8 +42,7 @@
     font-size: x-large;
     font-family: 'Open Sans', sans-serif;
     overflow: scroll;
-    overflow-y: scroll;
-    height: 500px;
+    height: 595px;
     width: 20%;
 }
 
