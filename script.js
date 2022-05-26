@@ -17,7 +17,7 @@ fetch(url)
    
 function dispPokemon()
 {
-    let ul = document.getElementById("pokeList");
+    let ul = document.getElementById("list");
     document.body.appendChild(ul);
     var pokemonNum = 1;
 
@@ -28,7 +28,8 @@ function dispPokemon()
             let li = document.createElement("li");
             li.setAttribute("id","name");
             let strEntry = String("#00" + pokemonNum + " " + pokemonCall[i].name);
-            li.innerHTML = strEntry;
+            let buttonTxt = "<button type=\"button\" class=\"pokemon\">"+ strEntry ;
+            li.innerHTML = buttonTxt;
             ul.appendChild(li);
         }
 
@@ -37,7 +38,8 @@ function dispPokemon()
             let li = document.createElement("li");
             li.setAttribute("id","name");
             let strEntry = String("#0" + pokemonNum + " " + pokemonCall[i].name);
-            li.innerHTML = strEntry;
+            let buttonTxt = "<button type=\"button\" class=\"pokemon\">"+ strEntry;
+            li.innerHTML = buttonTxt;
             ul.appendChild(li);
         }
 
@@ -46,7 +48,8 @@ function dispPokemon()
             let li = document.createElement("li");
             li.setAttribute("id","name");
             let strEntry = String("#" + pokemonNum + " " + pokemonCall[i].name);
-            li.innerHTML = strEntry;
+            let buttonTxt = "<button type=\"button\" class=\"pokemon\">"+ strEntry;
+            li.innerHTML = buttonTxt;
             ul.appendChild(li);
             
         }
