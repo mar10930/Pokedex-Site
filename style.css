@@ -44,6 +44,8 @@
     overflow: scroll;
     height: 595px;
     width: 20%;
+    list-style-type: none;
+    
 }
 
 
@@ -52,6 +54,24 @@
     color: black;
     font-size: x-large;
     font-family: 'Open Sans', sans-serif;
-    padding: 15px;
+    list-style-type: none;
+}
+#list
+{
+
+    align-items: center;
+    justify-content: center;
+    height: 590px;
+    width: 20%;
+    overflow-y: auto;
+    
+}
+
+.pokemon
+{
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-collapse: collapse;
 
 }
