@@ -22,6 +22,7 @@
 {
     background-color: #23272A;
     padding: 15px;
+    text-align: center;
     width: 20%;
 }
 .listTitle
@@ -48,6 +49,30 @@
     
 }
 
+#pokemonContain
+{
+    position: absolute;
+    left:25%;
+    top:15%;
+}
+
+
+#model
+{
+    position: absolute;
+    top: 20vh;
+    border: 2px #999999;
+    border-style:solid;
+    border-radius: 15%;
+}
+
+
+.header
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: xx-large;
+    color: #999999; 
+}
 
 #name
 {
