@@ -100,3 +100,26 @@
     border-collapse: collapse;
 
 }
+
+#statList
+{
+    list-style: none;
+    margin: 0;
+}
+
+#detailDiv
+{
+    width:max-content;
+    position:relative;
+    left: 400px;
+    top:8vh;
+}
+
+.stats
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: x-large;
+    padding-bottom: 5vh;
+    color: #999999; 
+    margin: 0;
+}

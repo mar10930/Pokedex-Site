@@ -74,7 +74,7 @@ function displayPokemon(btnId)
     let displayName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1);
 
     //Call the api
-    callPokemon(num);
+    loadData(num)
 
     if(num >=1 && num <= 9)
     {
@@ -93,7 +93,7 @@ function displayPokemon(btnId)
     document.getElementById("pokemonHeader").innerHTML = displayName;
 }
 
-function callPokemon(num)
+function loadData(num)
 {
     fetch(url+"pokemon/"+num)
     .then(response =>response.json())
@@ -102,9 +102,67 @@ function callPokemon(num)
         let spritePoke = data.sprites;
         console.log(spritePoke.back_default);
         document.getElementById("pokemonImg").src = spritePoke.front_default;
+        getData(data);
+
     })
     .catch(error=>{console.log("error could not get sprite",error);});    
 
+}
+
+function getData(data)
+{
+    let types = data.types;
+    let ability = data.abilities;
+    let abilityStr = "Ability: ";
+    let type = "";
+    let weight = 0.0;
+    let height = 0.0;
+
+    //Format the ability text
+    if(ability.length > 1)
+    {
+        for(let i = 0; i < ability.length;i++)
+        {
+            if(i == ability.length -1)
+            {
+                abilityStr += ability[i].ability.name;
+            }
+
+            else{
+                abilityStr += ability[i].ability.name + ", ";
+            }
+        }
+    }
+
+    else{
+        abilityStr += ability[i].ability.name
+    }
+
+    //Format the type text
+    if(types.length > 1)
+    {
+        type = "Type: "+ types[0].type.name + "/" +types[1].type.name;
+    }
+    else{
+        type = "Type: " + types[0].type.name;
+    }
+
+    //Get the height of the pokemon
+    pokemonHeight = data.height;
+
+    //Convert decimeter height to feet
+    let feet = parseFloat(pokemonHeight) / 3.048;
+    feet = feet.toFixed(1);
+
+    //Convert decigram to lbs
+    weight = Math.round((data.weight)/4.53592);
+
+    document.getElementById("type").innerHTML = type;
+    document.getElementById("ability").innerHTML = abilityStr;
+    document.getElementById("height").innerHTML = "Height: "+feet+" ft";
+    document.getElementById("weight").innerHTML = "Weight: " + weight + " lbs";
+    
+    
 }
 
 
