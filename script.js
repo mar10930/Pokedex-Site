@@ -1,6 +1,7 @@
 const url = "https://pokeapi.co/api/v2/"
 let pokemonCall = new Array();
 let  pokemonInfo = new Array();
+let pokeName = "";
 //Fetch the api call
 
 fetch(url+"pokemon?limit=151")
@@ -70,11 +71,11 @@ function displayPokemon(btnId)
 {
     let num = parseInt(document.getElementById(btnId).getAttribute("data-num"));
     let dispNum = "";
-    let pokeName = String(pokemonCall[num-1].name);
+    pokeName = String(pokemonCall[num-1].name);
     let displayName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1);
 
     //Call the api
-    loadData(num)
+    loadData(num,pokeName)
 
     if(num >=1 && num <= 9)
     {
@@ -93,23 +94,22 @@ function displayPokemon(btnId)
     document.getElementById("pokemonHeader").innerHTML = displayName;
 }
 
-function loadData(num)
+function loadData(num,name)
 {
     fetch(url+"pokemon/"+num)
     .then(response =>response.json())
     .then(data=>
     {
         let spritePoke = data.sprites;
-        console.log(spritePoke.back_default);
         document.getElementById("pokemonImg").src = spritePoke.front_default;
-        getData(data);
+        getData(data,name);
 
     })
     .catch(error=>{console.log("error could not get sprite",error);});    
 
 }
 
-function getData(data)
+function getData(data,name)
 {
     let types = data.types;
     let ability = data.abilities;
@@ -161,8 +161,30 @@ function getData(data)
     document.getElementById("ability").innerHTML = abilityStr;
     document.getElementById("height").innerHTML = "Height: "+feet+" ft";
     document.getElementById("weight").innerHTML = "Weight: " + weight + " lbs";
+    let buttonTxt = "<button type=\"button\"" + " id=\"cry\" " + " onClick=\"playCry()\">"+ 
+    "Cry"+"</button>";
+    document.getElementById("cryButton").innerHTML = buttonTxt;
+
+
     
-    
+}
+
+function playCry()
+{
+    let name = pokeName;
+    if(name == "nidoran-m")
+    {
+        name = "nidoranm";
+    }
+
+    else if(name == "nidoran-f")
+    {
+        name = "nidoranf";
+    }
+    let url = new Audio("https://play.pokemonshowdown.com/audio/cries/"+name+".mp3");
+    url.volume = .5;
+    url.play();
+
 }
 
 

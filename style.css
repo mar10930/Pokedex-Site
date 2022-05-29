@@ -7,7 +7,7 @@
 
 .navigator{
     background-color: black;
-    padding: 25px;
+    padding: 5vh;
 }
 
 .logo
@@ -66,6 +66,11 @@
     border-radius: 15%;
 }
 
+#titleText
+{
+    position: absolute;
+    top: 20%;
+}
 
 .header
 {
@@ -86,7 +91,7 @@
 
     align-items: center;
     justify-content: center;
-    height: 590px;
+    height: 74vh;
     width: 20%;
     overflow-y: auto;
     
@@ -111,8 +116,34 @@
 {
     width:max-content;
     position:relative;
-    left: 400px;
-    top:8vh;
+    left: 25vw;
+    top: 20vh;
+}
+
+#cryButton
+{
+    position: absolute;
+    top: 60vh;
+    left: 3.5vw;
+}
+
+
+#cry
+{
+    background-color: white;
+    
+    color: black;
+    font-size: x-large;
+    height: 50px;
+    width: 150px;
+}
+
+#cry:hover{
+    background-position: -100% 0;
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+    box-shadow: 0 0 50px gray;
 }
 
 .stats
