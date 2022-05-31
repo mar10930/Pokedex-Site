@@ -105,7 +105,9 @@ function loadData(num,name)
         getData(data,name);
 
     })
-    .catch(error=>{console.log("error could not get sprite",error);});    
+    .catch(error=>{console.log("error could not get sprite",error);});
+    
+
 
 }
 
@@ -164,6 +166,29 @@ function getData(data,name)
     let buttonTxt = "<button type=\"button\"" + " id=\"cry\" " + " onClick=\"playCry()\">"+ 
     "Cry"+"</button>";
     document.getElementById("cryButton").innerHTML = buttonTxt;
+
+    //Retreive the pokemon description
+    fetch(url+"pokemon-species/"+name)
+    .then(response =>response.json())
+    .then(data=>
+    {
+        let versions = new Array();
+        versions = data.flavor_text_entries;
+        let description = "";
+
+        //Check for the description in Pokemon Red games
+        for(let i = 0; i < versions.length;i++)
+        {
+            if(versions[i].version.name === "red")
+            {
+                description = versions[i].flavor_text;
+                break;
+            }
+        }
+        document.getElementById("description").innerHTML = description;
+
+    })
+    .catch(error=>{console.log("error could not get description",error);});
 
 
     
