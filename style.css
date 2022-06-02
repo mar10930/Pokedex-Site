@@ -38,16 +38,6 @@
     font-size: xx-large;
 }
 
-#pokeList{
-    color: black;
-    font-size: x-large;
-    font-family: 'Open Sans', sans-serif;
-    overflow: scroll;
-    height: 595px;
-    width: 20%;
-    list-style-type: none;
-    
-}
 
 #pokemonContain
 {
@@ -114,10 +104,13 @@
 
 #detailDiv
 {
-    width:max-content;
-    position:relative;
-    left: 25vw;
-    top: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    width:400px;
+    position: absolute;
+    left: 350px;
+    top: 100px;
+    text-align: left;
 }
 
 #cryButton
@@ -153,4 +146,41 @@
     padding-bottom: 5vh;
     color: #999999; 
     margin: 0;
+}
+
+
+@media only screen and (max-width:1000px) and (min-width:896px)
+{
+    #detailDiv
+    {
+        margin-left: auto;
+        margin-right: auto;
+        width:400px;
+        position: absolute;
+        left: 275px;
+        top: 100px;
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width:896px)
+{
+
+    #pokemonContain
+    {
+        position: absolute;
+        left:40%;
+        top:15%;
+    }
+
+    #detailDiv
+    {
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        width:fit-content;
+        left: 0px;
+        top: 550px;
+        text-align: left;
+    }
 }
