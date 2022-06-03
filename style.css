@@ -5,16 +5,20 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+body{
+    margin: 0;
+}
+
 .navigator{
     background-color: black;
-    padding: 5vh;
+    margin: 0;
 }
 
 .logo
 {
     color: cornsilk;
-    text-align: center;
     font-family: 'Pokemon Solid',sans-serif;
+    text-align: center;
     font-size: xx-large;
 }
 
@@ -42,15 +46,15 @@
 #pokemonContain
 {
     position: absolute;
-    left:25%;
-    top:15%;
+    left:30%;
+    top:20%;
 }
 
 
 #model
 {
     position: absolute;
-    top: 20vh;
+    top: 130px;
     border: 2px #999999;
     border-style:solid;
     border-radius: 15%;
@@ -81,7 +85,7 @@
 
     align-items: center;
     justify-content: center;
-    height: 74vh;
+    height: 85vh;
     width: 20%;
     overflow-y: auto;
     
@@ -104,8 +108,7 @@
 
 #detailDiv
 {
-    margin-left: auto;
-    margin-right: auto;
+
     width:400px;
     position: absolute;
     left: 350px;
@@ -116,8 +119,8 @@
 #cryButton
 {
     position: absolute;
-    top: 60vh;
-    left: 3.5vw;
+    top:475px;
+    left:45px;
 }
 
 
@@ -149,18 +152,27 @@
 }
 
 
-@media only screen and (max-width:1000px) and (min-width:896px)
+@media only screen and (max-width:1085px) and (min-width:896px)
 {
+
+    .stats
+    {
+        font-family: 'Open Sans', sans-serif;
+        font-size: large;
+        padding-bottom: 5vh;
+        color: #999999; 
+        margin: 0;
+    }
     #detailDiv
     {
-        margin-left: auto;
-        margin-right: auto;
         width:400px;
         position: absolute;
         left: 275px;
-        top: 100px;
+        top: 120px;
         text-align: left;
     }
+
+
 }
 
 @media only screen and (max-width:896px)
@@ -169,18 +181,83 @@
     #pokemonContain
     {
         position: absolute;
-        left:40%;
-        top:15%;
+        width: fit-content;
+        left:30%;
+        top:60px;
+
     }
 
     #detailDiv
     {
-        margin-left: auto;
-        margin-right: auto;
         position: absolute;
-        width:fit-content;
+        width:60vw;
         left: 0px;
-        top: 550px;
+        top: 450px;
         text-align: left;
+        margin: 0;
+    }
+
+    .listContain
+    {
+        background-color: #23272A;
+        padding: 15px;
+        text-align: center;
+    }
+    .listTitle
+    {
+        color: cornsilk;
+        text-align: center;
+        font-size: small;
+        font-family: 'Pokemon Solid',sans-serif;
+    }  
+    
+    #model
+    {
+        position: absolute;
+        top: 150%;
+        border: 2px #999999;
+        border-style:solid;
+        border-radius: 15%;
+    }
+
+    #cryButton
+    {
+        position: absolute;
+        top:375px;
+        left:20px;
+    }
+
+    #pokemonImg
+    {
+        width: 200px;
+        height:200px;
+    }
+
+    .stats
+    {
+        font-family: 'Open Sans', sans-serif;
+        font-size: large;
+        padding-bottom: 5vh;
+        color: #999999; 
+        margin: 0;
+    }
+
+    .header
+    {
+        font-family: 'Open Sans', sans-serif;
+        font-size: x-large;
+        color: #999999; 
+    }
+
+
+}
+
+@media only screen and (min-height:920px) and (min-width:896px)
+{
+    #cryButton
+    {
+        position: absolute;
+        top:475px;
+        left:45px;
     }
 }
