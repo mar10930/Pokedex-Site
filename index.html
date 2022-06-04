@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -30,19 +30,25 @@
                 <div id="pokemonTitle">
                     <h2 id="pokemonHeader" class="header"></h2>
                 </div>
+                <div id="cryButton"></div>
             </div>
-            <div id="model">
-                <img id="pokemonImg" width="250" height="250" >
+            <div id="noPokemon">
+                <div id="unown">
+                    <img id="question" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/201-question.png" height="400" width="400">
+                </div>
+                <div id="selectText">
+                    <p id="select">Please select a pokemon</p>
+                </div>
             </div>
-            <div id="detailDiv">
+            <div id="detailDiv" >
                 <ul id="statList">
                     <li id="type" class="stats"></li>
                     <li id="ability" class="stats"></li>
                     <li id="height" class="stats"></li>
                     <li id="weight" class="stats"></li>
+                    <li id="description" class="stats"></li>
                 </ul>
             </div>
-            <div id="cryButton"></div>
         </div>
         <script src="script.js"></script>
     </body>

@@ -18,6 +18,7 @@ body{
 {
     color: cornsilk;
     font-family: 'Pokemon Solid',sans-serif;
+    padding: 2%;
     text-align: center;
     font-size: xx-large;
 }
@@ -126,12 +127,12 @@ body{
 
 #cry
 {
-    background-color: white;
-    
+    background-color: white;  
     color: black;
     font-size: x-large;
     height: 50px;
     width: 150px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #cry:hover{
@@ -149,6 +150,27 @@ body{
     padding-bottom: 5vh;
     color: #999999; 
     margin: 0;
+}
+
+#select
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: x-large;
+    text-align: center;
+    color: #999999; 
+}
+
+#noPokemon
+{
+    position: absolute;
+    left: 180px;
+    top:100px;
+}
+
+#question
+{
+    width: 300px;
+    height: 300px;
 }
 
 
@@ -172,6 +194,19 @@ body{
         text-align: left;
     }
 
+    #noPokemon
+    {
+        position: absolute;
+        left: 150px;
+        top:50px;
+    }
+
+    #question
+    {
+        height: 200px;
+        width:200px;
+    }
+
 
 }
 
@@ -183,7 +218,7 @@ body{
         position: absolute;
         width: fit-content;
         left:30%;
-        top:60px;
+        top:90px;
 
     }
 
@@ -249,6 +284,29 @@ body{
         color: #999999; 
     }
 
+    #list
+    {
+
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 20%;
+        overflow-y: auto;
+        
+    }
+
+    #noPokemon
+    {
+        position: absolute;
+        left: 0px;
+        top:50px;
+    }
+
+    #question
+    {
+        height: 200px;
+        width:200px;
+    }
 
 }
 
@@ -260,4 +318,29 @@ body{
         top:475px;
         left:45px;
     }
+
+    #list
+    {
+
+        align-items: center;
+        justify-content: center;
+        height: 89vh;
+        width: 20%;
+        overflow-y: auto;
+        
+    }
+
+    #noPokemon
+    {
+        position: absolute;
+        left: 20px;
+        top:50px;
+    }
+
+    #question
+    {
+        height: 200px;
+        width:200px;
+    }
+
 }

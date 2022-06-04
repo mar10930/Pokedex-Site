@@ -92,6 +92,8 @@ function displayPokemon(btnId)
     }
     document.getElementById("pokeNum").innerHTML = dispNum;
     document.getElementById("pokemonHeader").innerHTML = displayName;
+    document.getElementById("noPokemon").style.visibility = "hidden";
+    
 }
 
 function loadData(num,name)
@@ -101,6 +103,11 @@ function loadData(num,name)
     .then(data=>
     {
         let spritePoke = data.sprites;
+        let divModel = document.createElement("div");
+        divModel.innerHTML = "<img id=\"pokemonImg\" width=\"250\" height=\"250\">"
+        divModel.id = "model";
+        divModel.se
+        document.getElementById("titleText").appendChild(divModel);
         document.getElementById("pokemonImg").src = spritePoke.front_default;
         getData(data,name);
 
@@ -137,7 +144,7 @@ function getData(data,name)
     }
 
     else{
-        abilityStr += ability[i].ability.name
+        abilityStr += ability[0].ability.name
     }
 
     //Format the type text
