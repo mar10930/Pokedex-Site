@@ -212,6 +212,11 @@ function playCry()
     {
         name = "nidoranf";
     }
+
+    else if(name == "mr-mime")
+    {
+        name = "mrmime";
+    }
     let url = new Audio("https://play.pokemonshowdown.com/audio/cries/"+name+".mp3");
     url.volume = .5;
     url.play();
