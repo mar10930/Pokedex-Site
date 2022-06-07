@@ -129,7 +129,6 @@ body{
 #cry
 {
     background-color: white;  
-    color: black;
     font-size: x-large;
     height: 50px;
     width: 150px;
@@ -140,7 +139,6 @@ body{
     background-color: black;
     color: white;
     transition: 0.5s;
-    box-shadow: 0 0 50px gray;
 }
 
 .stats
