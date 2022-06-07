@@ -1,6 +1,5 @@
 const url = "https://pokeapi.co/api/v2/"
 let pokemonCall = new Array();
-let  pokemonInfo = new Array();
 let pokeName = "";
 //Fetch the api call
 
@@ -64,6 +63,8 @@ function dispPokemon()
         pokemonNum++;
     }
 
+    document.getElementById("model").style.visibility = "hidden";
+
    
 }
 
@@ -93,7 +94,8 @@ function displayPokemon(btnId)
     document.getElementById("pokeNum").innerHTML = dispNum;
     document.getElementById("pokemonHeader").innerHTML = displayName;
     document.getElementById("noPokemon").style.visibility = "hidden";
-    
+
+
 }
 
 function loadData(num,name)
@@ -102,12 +104,9 @@ function loadData(num,name)
     .then(response =>response.json())
     .then(data=>
     {
+        document.getElementById("model").style.visibility = "visible";
         let spritePoke = data.sprites;
         let divModel = document.createElement("div");
-        divModel.innerHTML = "<img id=\"pokemonImg\" width=\"250\" height=\"250\">"
-        divModel.id = "model";
-        divModel.se
-        document.getElementById("titleText").appendChild(divModel);
         document.getElementById("pokemonImg").src = spritePoke.front_default;
         getData(data,name);
 
